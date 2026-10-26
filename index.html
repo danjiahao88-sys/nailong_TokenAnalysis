@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>奶龙 Agent 管理台</title>
+  <link rel="icon" type="image/png" href="./assets/nailoong.png" />
+  <link rel="stylesheet" href="./style.css?v=20261026d" />
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand">
+        <img class="brand-face" src="./assets/nailoong.png" alt="奶龙" width="52" height="52" />
+        <div class="brand-text">
+          <a class="back-link hidden" id="backLink" href="./">← 返回总览</a>
+          <h1 id="pageTitle">奶龙 Agent 管理台</h1>
+          <p class="sub" id="pageSub">本机 AI Coding Agent 资产统一总览</p>
+        </div>
+      </div>
+      <div class="summary" id="summary">正在读取本地数据…</div>
+    </header>
+
+    <div class="banner hidden" id="banner" role="alert"></div>
+
+    <section class="stats" id="stats" aria-label="统计概览"></section>
+
+    <section class="toolbar" aria-label="平台筛选">
+      <div class="filter-group" id="filters"></div>
+      <div class="meta-line" id="metaLine"></div>
+    </section>
+
+    <main class="layout">
+      <section class="panel usage-panel" aria-labelledby="usageTitle">
+        <div class="panel-head">
+          <h2 id="usageTitle">模型开销</h2>
+          <span class="count-badge" id="usageBadge">--</span>
+        </div>
+        <div id="usageBody"></div>
+      </section>
+
+      <div class="middle-col">
+        <section class="panel models-panel" aria-labelledby="modelsTitle">
+          <div class="panel-head">
+            <h2 id="modelsTitle"><span id="modelsTitleText">用过的大模型</span><span class="panel-hint" id="modelsHint">来自本机会话与配置记录</span></h2>
+            <span class="count-badge" id="modelsCount">0</span>
+          </div>
+          <div class="model-grid" id="modelsList"></div>
+        </section>
+
+        <section class="panel" aria-labelledby="skillsTitle">
+          <div class="panel-head">
+            <h2 id="skillsTitle">Skill 列表</h2>
+            <span class="count-badge" id="skillsCount">0</span>
+          </div>
+          <div class="scroll-area scroll-md" id="skillsList"></div>
+        </section>
+
+        <section class="panel" aria-labelledby="mcpTitle">
+          <div class="panel-head">
+            <h2 id="mcpTitle">MCP Servers</h2>
+            <span class="count-badge" id="mcpCount">0</span>
+          </div>
+          <div class="scroll-area scroll-md" id="mcpList"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <button class="btn-primary" id="refreshBtn" type="button">刷新数据</button>
+      <p class="privacy">
+        数据仅从本机读取，不会上传。
+        <span class="dot-sep">·</span>
+        项目级扫描目录：<code id="projectPath">--</code>
+      </p>
+    </footer>
+  </div>
+
+  <script src="./app.js?v=20261026g" defer></script>
+</body>
+</html>

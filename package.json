@@ -1,0 +1,13 @@
+{
+  "name": "nailoong-agent-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "奶龙风格的本机 AI Coding Agent 资产管理仪表盘",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
